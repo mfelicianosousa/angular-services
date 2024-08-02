@@ -1,0 +1,18 @@
+<div class="card">
+  <!-- pidgey -->
+  <input type="text" (input)="getPokemon($any($event.target).value)">
+  <div class="card__title">
+    <h3> {{ pokemon.name | titlecase | transformer:'#':'@' }} </h3>
+  </div>
+  <div class="card__body">
+    <img [src]="pokemon.sprites.front_default" alt="pokemon" srtset="">
+  </div>
+  <div class="card__stats">
+
+    <span class="card__stats__type" *ngFor="let t of pokemon.types">
+      {{ t.type.name | uppercase }}
+    </span>
+
+  </div>
+
+</div>
